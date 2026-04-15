@@ -3,8 +3,8 @@
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    public float jumpForce = 7f;
-    public float longJumpForce = 10f;
+    public float jumpForce = 50f;
+    public float longJumpForce = 60f;
 
     public Animator animator;
 
