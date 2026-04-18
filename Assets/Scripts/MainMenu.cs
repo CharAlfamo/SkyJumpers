@@ -3,8 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void Jugar()
+    public void PlayGame()
     {
-        SceneManager.LoadScene("SkyJumpersLevel1Scena");
+        SceneManager.LoadScene("SkyJumpersLevel1Scena"); 
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Salir del juego");
     }
 }

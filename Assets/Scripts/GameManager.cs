@@ -1,14 +1,19 @@
-using UnityEngine;
-using TMPro;
+ï»¿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public static int finalScore;
+    public static int finalRelics;
+    public static int finalFalls;
+    public static string finalRank;
+
     [Header("Game Stats")]
-    public int score = 0;
-    public int relics = 0;
-    public int falls = 0;
+    public int score;
+    public int relics;
+    public int falls;
 
     [Header("Score Settings")]
     public int startScore = 100;
@@ -18,25 +23,35 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Objective")]
     public int relicsNeeded = 5;
-    private bool levelCompleted = false;
 
-    [Header("Level Complete UI")]
-    public GameObject levelCompletePanel;
-    public TextMeshProUGUI finalScoreText;
+    private bool levelCompleted = false;
 
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
-        else
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
     }
 
-    void Start()
+        void Start()
     {
-        score = startScore;
-        Debug.Log("Score inicial: " + score);
+        // Solo inicializa si es primera vez
+        if (score == 0 && relics == 0 && falls == 0)
+        {
+            ResetStats();
+        }
     }
+
+    // =========================
+    // SCORE
+    // =========================
 
     public void AddScore(int amount)
     {
@@ -69,8 +84,13 @@ public class GameManager : MonoBehaviour
         falls++;
         AddScore(-fallPenalty);
 
-        Debug.Log("Caídas: " + falls);
+        Debug.Log("CaÃ­das: " + falls);
+
     }
+
+    // =========================
+    // WIN CONDITION
+    // =========================
 
     void CheckLevelComplete()
     {
@@ -78,32 +98,15 @@ public class GameManager : MonoBehaviour
         {
             levelCompleted = true;
 
-            Debug.Log("Todas las reliquias recogidas");
+            Debug.Log("VICTORIA");
 
-            ShowLevelComplete();
+            SceneManager.LoadScene("WinScene");
         }
     }
 
-    public void ShowLevelComplete()
-    {
-        Debug.Log("LEVEL COMPLETE!");
-
-        string rank = GetRank();
-
-        if (levelCompletePanel != null)
-            levelCompletePanel.SetActive(true);
-
-        if (finalScoreText != null)
-        {
-          finalScoreText.text =
-         "¡LEVEL COMPLETE!\n\n" +
-         "FINAL SCORE :\n" +
-         score +
-         "\n\nRANK: " + rank;
-            }
-
-        Time.timeScale = 0f;
-    }
+    // =========================
+    // RANKING
+    // =========================
 
     public string GetRank()
     {
@@ -112,5 +115,19 @@ public class GameManager : MonoBehaviour
         if (score >= 400) return "B";
         if (score >= 200) return "C";
         return "D";
+    }
+
+    // =========================
+    // RESET (IMPORTANTE)
+    // =========================
+
+    public void ResetStats()
+    {
+        score = startScore;
+        relics = 0;
+        falls = 0;
+        levelCompleted = false;
+
+        Debug.Log("Stats reiniciados");
     }
 }

@@ -6,7 +6,8 @@ public class LevelCompleteTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.instance.ShowLevelComplete();
+            // Ya no usamos ShowLevelComplete
+            // La victoria se maneja en GameManager con reliquias
         }
     }
 }
