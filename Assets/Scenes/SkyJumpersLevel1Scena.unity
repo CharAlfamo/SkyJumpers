@@ -960,7 +960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536978805967571003, guid: ce789e48a2eea5b4dad423f3ef8b586a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.29335135
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 536978805967571003, guid: ce789e48a2eea5b4dad423f3ef8b586a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -998,6 +998,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8e87aba7d8ba3f84d976c368caf34240, type: 2}
+    - target: {fileID: 3996435319613971683, guid: ce789e48a2eea5b4dad423f3ef8b586a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3085,6 +3089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockArch-3
       objectReference: {fileID: 0}
+    - target: {fileID: 7112109276229870537, guid: c995c0cb0c92dcf448019e120257e8ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7331126682630870761, guid: c995c0cb0c92dcf448019e120257e8ec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4939,11 +4947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4736786385250049347, guid: 70cee26c71c9bdd4196ec50349fc16c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9325876
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4736786385250049347, guid: 70cee26c71c9bdd4196ec50349fc16c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01874123
+      value: 7.97
       objectReference: {fileID: 0}
     - target: {fileID: 4736786385250049347, guid: 70cee26c71c9bdd4196ec50349fc16c4, type: 3}
       propertyPath: m_LocalRotation.w
