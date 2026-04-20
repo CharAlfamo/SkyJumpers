@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Hector\\SkyJumpers\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\Enemy Skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Enemy Skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\GhostEnemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\GhostEnemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\CameraFollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\CameraFollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\MainMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MainMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\SkyJumpers\\Library\\PackageCache\\com.unity.render-pipelines.core@14.0.12\\Editor\\MaterialUpgrader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,6 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Enemy Skeleton.cs",
+              "DocumentMoniker": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\Enemy Skeleton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy Skeleton.cs",
+              "ToolTip": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\Enemy Skeleton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy Skeleton.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwFUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T19:41:44.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GhostEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\GhostEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GhostEnemy.cs",
+              "ToolTip": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\GhostEnemy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GhostEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:55:51.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CameraFollow.cs",
               "DocumentMoniker": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\CameraFollow.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraFollow.cs",
@@ -38,12 +72,11 @@
               "RelativeToolTip": "Assets\\Scripts\\CameraFollow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T15:58:14.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-08T15:58:14.821Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu.cs",
@@ -51,8 +84,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MainMenu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T04:47:20.227Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-19T04:47:20.227Z"
             },
             {
               "$type": "Document",
@@ -62,13 +94,13 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\Hector\\SkyJumpers\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAFsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAIwD0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T16:34:36.607Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "MaterialUpgrader.cs",
               "DocumentMoniker": "C:\\Users\\Hector\\SkyJumpers\\Library\\PackageCache\\com.unity.render-pipelines.core@14.0.12\\Editor\\MaterialUpgrader.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.core@14.0.12\\Editor\\MaterialUpgrader.cs",

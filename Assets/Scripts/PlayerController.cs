@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource jumpAudioSource;
+
     private Rigidbody rb;
     private bool isGrounded = true;
 
@@ -22,6 +24,10 @@ public class PlayerController : MonoBehaviour
 
         // checkpoint inicial
         checkpoint = transform.position;
+
+        // Intentamos obtener el AudioSource automáticamente si no se asignó en el Inspector
+        if (jumpAudioSource == null)
+            jumpAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -49,6 +55,12 @@ public class PlayerController : MonoBehaviour
                 jumpPower = longJumpForce;
 
             rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+
+            // --- REPRODUCIR EL SONIDO AQUÍ ---
+            if (jumpAudioSource != null)
+            {
+                jumpAudioSource.Play();
+            }
 
             animator.SetBool("IsJumping", true);
             isGrounded = false;

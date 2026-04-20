@@ -1016,8 +1016,6 @@ MonoBehaviour:
   checkpointScore: 25
   fallPenalty: 10
   relicsNeeded: 5
-  levelCompletePanel: {fileID: 769716747}
-  finalScoreText: {fileID: 1038042823}
 --- !u!4 &902064530
 Transform:
   m_ObjectHideFlags: 0
@@ -2287,9 +2285,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1802121550}
-  - {fileID: 769703693}
   - {fileID: 1046349893}
+  - {fileID: 769703693}
+  - {fileID: 1802121550}
   - {fileID: 239393911}
   - {fileID: 472208665}
   - {fileID: 80295242}

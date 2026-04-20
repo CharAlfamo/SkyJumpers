@@ -15,6 +15,10 @@ public class EnemySimple : MonoBehaviour
     // 🔹 Referencia al Rigidbody del enemigo (para moverlo con física)
     private Rigidbody rb;
 
+    // --- NUEVAS VARIABLES PARA EL SONIDO ---
+    public AudioSource enemyAudio;
+    private bool isPlayingSound = false;
+
     // 🔹 Se ejecuta al iniciar el juego
     void Start()
     {
@@ -34,6 +38,9 @@ public class EnemySimple : MonoBehaviour
             // Si no lo encuentra, muestra error en consola
             Debug.LogError("❌ No se encontró el Player");
         }
+        // Si no se asignó en el inspector, lo buscamos en el objeto
+        if (enemyAudio == null)
+            enemyAudio = GetComponent<AudioSource>();
     }
 
     // 🔹 Se ejecuta constantemente (mejor para física)
@@ -58,11 +65,23 @@ public class EnemySimple : MonoBehaviour
 
             // Hace que el enemigo mire hacia donde se mueve
             transform.localScale = new Vector3(dir, 1, 1);
+            // --- ACTIVAR SONIDO AL DETECTAR AL JUGADOR ---
+            if (!isPlayingSound && enemyAudio != null)
+            {
+                enemyAudio.Play();
+                isPlayingSound = true;
+            }
         }
         else
         {
-            // Si el jugador está lejos, el enemigo se detiene
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
+
+            // --- APAGAR SONIDO AL ALEJARSE ---
+            if (isPlayingSound && enemyAudio != null)
+            {
+                enemyAudio.Stop();
+                isPlayingSound = false;
+            }
         }
     }
 

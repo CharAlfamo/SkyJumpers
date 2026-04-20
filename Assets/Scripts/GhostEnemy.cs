@@ -2,55 +2,113 @@
 
 public class GhostEnemy : MonoBehaviour
 {
-    public float speed = 4f;      // velocidad del ghost
-    public float rango = 12f;     // distancia para detectar al jugador
+    [Header("Configuración de Movimiento")]
+    public float speed = 4f;
+    public float rango = 12f;
+
+    [Header("Sistema de Cansancio")]
+    public float tiempoMaximoPersecucion = 4f; // Segundos que aguanta corriendo
+    public float tiempoDescanso = 6f;         // Segundos que se queda quieto
+
+    private float cronometroPersecucion;
+    private float cronometroDescanso;
+    private bool estaCansado = false;
 
     private Transform player;
     private Rigidbody rb;
 
+    [Header("Sonido")]
+    public AudioSource ghostAudio;
+    private bool isPlayingSound = false;
+
     void Start()
     {
-        // Obtener Rigidbody
         rb = GetComponent<Rigidbody>();
-
-        // Buscar al jugador por tag
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
 
-        if (obj != null)
-        {
-            player = obj.transform;
-        }
-        else
-        {
-            Debug.LogError("❌ No se encontró el Player");
-        }
+        if (obj != null) player = obj.transform;
+
+        if (ghostAudio == null)
+            ghostAudio = GetComponent<AudioSource>();
+
+        cronometroPersecucion = tiempoMaximoPersecucion;
     }
 
     void FixedUpdate()
     {
         if (player == null) return;
 
-        // Distancia total (X y Y)
         float distancia = Vector3.Distance(transform.position, player.position);
 
-        if (distancia < rango)
+        // LÓGICA DE ESTADOS
+        if (estaCansado)
         {
-            // Dirección hacia el jugador
-            Vector3 direccion = (player.position - transform.position).normalized;
-
-            // Movimiento flotante
-            rb.velocity = new Vector3(direccion.x * speed, direccion.y * speed, 0);
-
-            // Girar hacia el jugador
-            if (direccion.x != 0)
-            {
-                transform.localScale = new Vector3(Mathf.Sign(direccion.x), 1, 1);
-            }
+            Descansar();
+        }
+        else if (distancia < rango)
+        {
+            Perseguir();
         }
         else
         {
-            // Se queda quieto si está lejos
-            rb.velocity = Vector3.zero;
+            Detenerse();
+        }
+    }
+
+    void Perseguir()
+    {
+        Vector3 direccion = (player.position - transform.position).normalized;
+        rb.velocity = new Vector3(direccion.x * speed, direccion.y * speed, 0);
+
+        if (direccion.x != 0)
+            transform.localScale = new Vector3(Mathf.Sign(direccion.x), 1, 1);
+
+        // Control de tiempo de persecución
+        cronometroPersecucion -= Time.fixedDeltaTime;
+        if (cronometroPersecucion <= 0)
+        {
+            estaCansado = true;
+            cronometroDescanso = tiempoDescanso;
+        }
+
+        // Sonido
+        if (!isPlayingSound && ghostAudio != null)
+        {
+            ghostAudio.Play();
+            isPlayingSound = true;
+        }
+    }
+
+    void Descansar()
+    {
+        rb.velocity = Vector3.zero;
+        cronometroDescanso -= Time.fixedDeltaTime;
+
+        if (cronometroDescanso <= 0)
+        {
+            estaCansado = false;
+            cronometroPersecucion = tiempoMaximoPersecucion; // Reset energía
+        }
+
+        DetenerSonido();
+    }
+
+    void Detenerse()
+    {
+        rb.velocity = Vector3.zero;
+        // Si no está persiguiendo, recupera energía poco a poco
+        if (cronometroPersecucion < tiempoMaximoPersecucion)
+            cronometroPersecucion += Time.fixedDeltaTime;
+
+        DetenerSonido();
+    }
+
+    void DetenerSonido()
+    {
+        if (isPlayingSound && ghostAudio != null)
+        {
+            ghostAudio.Stop();
+            isPlayingSound = false;
         }
     }
 
@@ -59,13 +117,9 @@ public class GhostEnemy : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             Rigidbody playerRb = col.gameObject.GetComponent<Rigidbody>();
-
             if (playerRb != null)
             {
-                // Dirección del empuje
                 Vector3 dir = (col.transform.position - transform.position).normalized;
-
-                // 💥 Empuje
                 playerRb.velocity = new Vector3(dir.x * 8f, 6f, 0);
             }
         }
