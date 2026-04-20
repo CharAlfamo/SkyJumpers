@@ -1015,7 +1015,6 @@ MonoBehaviour:
   relicScore: 50
   checkpointScore: 25
   fallPenalty: 10
-  relicsNeeded: 5
 --- !u!4 &902064530
 Transform:
   m_ObjectHideFlags: 0

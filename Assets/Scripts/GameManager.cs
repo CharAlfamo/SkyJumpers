@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public static int finalScore;
     public static int finalRelics;
     public static int finalFalls;
@@ -20,9 +19,6 @@ public class GameManager : MonoBehaviour
     public int relicScore = 50;
     public int checkpointScore = 25;
     public int fallPenalty = 10;
-
-    [Header("Level Objective")]
-    public int relicsNeeded = 5;
 
     private bool levelCompleted = false;
 
@@ -40,18 +36,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-        void Start()
+    void Start()
     {
-        // Solo inicializa si es primera vez
+
         if (score == 0 && relics == 0 && falls == 0)
         {
             ResetStats();
         }
     }
 
-    // =========================
-    // SCORE
-    // =========================
 
     public void AddScore(int amount)
     {
@@ -69,8 +62,6 @@ public class GameManager : MonoBehaviour
         AddScore(relicScore);
 
         Debug.Log("Reliquias: " + relics);
-
-        CheckLevelComplete();
     }
 
     public void ReachCheckpoint()
@@ -85,28 +76,24 @@ public class GameManager : MonoBehaviour
         AddScore(-fallPenalty);
 
         Debug.Log("Caídas: " + falls);
-
     }
 
-    // =========================
-    // WIN CONDITION
-    // =========================
 
-    void CheckLevelComplete()
+    public void WinGame()
     {
-        if (!levelCompleted && relics >= relicsNeeded)
-        {
-            levelCompleted = true;
+        if (levelCompleted) return;
 
-            Debug.Log("VICTORIA");
+        levelCompleted = true;
 
-            SceneManager.LoadScene("WinScene");
-        }
+        finalScore = score;
+        finalRelics = relics;
+        finalFalls = falls;
+        finalRank = GetRank();
+
+        Debug.Log("VICTORIA POR PORTAL");
+
+        SceneManager.LoadScene("WinScene");
     }
-
-    // =========================
-    // RANKING
-    // =========================
 
     public string GetRank()
     {
@@ -117,9 +104,6 @@ public class GameManager : MonoBehaviour
         return "D";
     }
 
-    // =========================
-    // RESET (IMPORTANTE)
-    // =========================
 
     public void ResetStats()
     {

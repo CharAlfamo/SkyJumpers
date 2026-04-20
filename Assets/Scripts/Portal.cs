@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -9,17 +8,12 @@ public class Portal : MonoBehaviour
         {
             if (GameManager.instance != null)
             {
-                GameManager.finalScore = GameManager.instance.score;
-                GameManager.finalRelics = GameManager.instance.relics;
-                GameManager.finalFalls = GameManager.instance.falls;
-                GameManager.finalRank = GameManager.instance.GetRank();
+                GameManager.instance.WinGame();
             }
             else
             {
-                Debug.LogError("GameManager es NULL en portal");
+                Debug.LogError("GameManager no encontrado");
             }
-
-            SceneManager.LoadScene("WinScene");
         }
     }
 }
